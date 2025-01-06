@@ -15,10 +15,10 @@ class Vehicle {
   }
 
   applyBehaviors(target) {
-    //let force = this.seek(target);
     let force = this.seek(target);
     this.applyForce(force);
   }
+
   // seek est une méthode qui permet de faire se rapprocher le véhicule de la cible passée en paramètre
   seek(target) {
     // on calcule la direction vers la cible
@@ -40,6 +40,11 @@ class Vehicle {
   flee(target) {
     // inverse de seek !  RENVOYER UNE FORCE INVERSE A CELLE RENVOYEE
     // PAR LE COMPORTEMENT SEEK
+    
+    /**let force = this.seek(target);
+    force.mult(-1);
+    return force;
+    */
   }
 
   // applyForce est une méthode qui permet d'appliquer une force au véhicule
@@ -88,8 +93,9 @@ class Vehicle {
     // Que fait cette ligne ?
     //this.edges();
     
-    // draw velocity vector
     pop();
+
+    // draw velocity vector
     this.drawVelocityVector();
   }
 
